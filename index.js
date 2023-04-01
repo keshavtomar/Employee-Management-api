@@ -8,14 +8,14 @@ mongoDB();
 app.use(cors({
     origin: 'https://employee-management-website-two.vercel.app'
 }));
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origiin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-// })
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origiin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+})
 
 app.use(express.json());
 
