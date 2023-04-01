@@ -23,7 +23,7 @@ app.use('/api', require('./Routes/employeeData'));
 
 
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 const server = http.createServer(app);
 server.listen(port, () => { console.log('this app is running on ' + port) });
