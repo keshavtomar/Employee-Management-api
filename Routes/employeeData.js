@@ -1,11 +1,10 @@
 require('dotenv').config();
 
-const cors = require('cors');
 const express = require('express');
 const Router = express.Router();
 const mongoose = require('mongoose');
 
-Router.get('/employeeData', async (req, res) => {
+Router.post('/employeeData', async (req, res) => {
     try {
         const employees = await mongoose.connection.db.collection("employees");
         employees.find({}).toArray(async (err, empData) => {
