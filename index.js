@@ -14,7 +14,6 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json());
-app.get("*", res.send({ status: 'Bad Request' }));
 
 app.use('/api', require('./Routes/createUser'));
 app.use('/api', require('./Routes/addEmployee'));
