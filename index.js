@@ -5,7 +5,9 @@ const cors = require('cors');
 mongoDB();
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://employee-management-website-two.vercel.app'
+}));
 // app.use((req, res, next) => {
 //     res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
 //     res.header(
