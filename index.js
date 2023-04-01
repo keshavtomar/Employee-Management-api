@@ -5,6 +5,7 @@ mongoDB();
 
 
 app.use((req, res, next) => {
+    console.log(req);
     res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
     res.header(
         "Access-Control-Allow-Headers",
@@ -12,6 +13,8 @@ app.use((req, res, next) => {
     );
     next();
 })
+
+app.get('/', res.send("Servers are running"));
 
 app.use(express.json());
 
