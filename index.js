@@ -23,6 +23,7 @@ app.use('/api', require('./Routes/employeeData'));
 
 
 const port = process.env.PORT
+console.log(port);
 if (port == null || port == "") {
     port = 4000;
 }
