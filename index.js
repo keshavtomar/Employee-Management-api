@@ -22,4 +22,8 @@ app.use('/api', require('./Routes/getId'));
 app.use('/api', require('./Routes/employeeData'));
 
 
-module.exports = app;
+
+const port = process.env.PORT || 4000
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
