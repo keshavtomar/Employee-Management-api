@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 4000
 const mongoDB = require("./db");
 mongoDB();
 const v = 5;
@@ -23,6 +22,10 @@ app.use('/api', require('./Routes/getId'));
 app.use('/api', require('./Routes/employeeData'));
 
 
+const port = process.env.PORT
+if (port == null || port == "") {
+    port = 4000;
+}
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
