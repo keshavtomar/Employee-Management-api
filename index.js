@@ -1,4 +1,5 @@
 const express = require('express')
+const http = require('http')
 const app = express()
 const mongoDB = require("./db");
 mongoDB();
@@ -23,6 +24,6 @@ app.use('/api', require('./Routes/employeeData'));
 
 
 const port = process.env.PORT
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+
+const server = http.createServer(app);
+server.listen(port, () => { console.log('this app is running on ' + port) });
