@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const app = express()
 const mongoDB = require("./db");
+const mongoose = require('mongoose');
 mongoDB();
 
 app.use((req, res, next) => {
