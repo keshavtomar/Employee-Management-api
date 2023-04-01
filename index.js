@@ -1,10 +1,12 @@
 const express = require('express')
+const cors = require('cors');
 const app = express()
 const mongoDB = require("./db");
 mongoDB();
 const v = 5;
 
 
+app.use(cors());
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "https://employee-management-api.vercel.app");
     res.header(
