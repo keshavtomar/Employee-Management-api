@@ -21,6 +21,19 @@ app.get('*', (req, res, next) => {
     })
 })
 
+app.get('/api/employeeData', async (req, res) => {
+    try {
+        const employees = await mongoose.connection.db.collection("employees");
+        employees.find({}).toArray(async (err, empData) => {
+            res.status(200).json({
+                data: [empData]
+            })
+        })
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 app.use('/api', require('./Routes/createUser'));
 app.use('/api', require('./Routes/addEmployee'));
 app.use('/api', require('./Routes/getId'));
