@@ -22,12 +22,4 @@ app.use('/api', require('./Routes/getId'));
 app.use('/api', require('./Routes/employeeData'));
 
 
-const port = process.env.PORT
-console.log(port);
-if (port == null || port == "") {
-    port = 4000;
-}
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+module.exports = app;
