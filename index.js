@@ -2,11 +2,10 @@ const express = require('express')
 const app = express()
 const mongoDB = require("./db");
 mongoDB();
-const v = 5;
 
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app/fetch");
+    res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
     res.header(
         "Access-Control-Allow-Headers",
         "Origiin, X-Requested-With, Content-Type, Accept"
