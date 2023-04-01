@@ -6,11 +6,10 @@ mongoDB();
 
 
 app.use(cors({
-    origin: 'https://employee-management-website-two.vercel.app'
+    Origin: 'https://employee-management-website-two.vercel.app'
 }));
 app.use((req, res, next) => {
     console.log(req);
-    res.setHeader("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
     res.header('Access-Control-Allow-Origin', 'https://employee-management-website-two.vercel.app');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
