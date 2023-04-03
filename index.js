@@ -1,10 +1,18 @@
 const express = require('express')
 const app = express()
 const mongoDB = require("./db");
+const cors = require('cors');
 mongoDB();
 const v = 5;
 
 
+app.use(cors());
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "https://employee-management-website-two.vercel.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
