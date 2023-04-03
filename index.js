@@ -5,6 +5,9 @@ const cors = require('cors');
 mongoDB();
 const v = 5;
 
+app.get("/", (req, res) => {
+    res.send({ status: ok });
+})
 
 app.use(cors());
 
