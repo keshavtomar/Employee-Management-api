@@ -3,7 +3,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const password = process.env.PASSWORD;
 
-const mongoURI = 'mongodb+srv://keshavtomar:' + password + '@cluster0.ibzyjol.mongodb.net/settyl-intern?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://keshavtomar:' + 'keshav123' + '@cluster0.ibzyjol.mongodb.net/settyl-intern?retryWrites=true&w=majority';
 
 mongoose.set('strictQuery', true);
 
